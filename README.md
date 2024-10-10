@@ -1,6 +1,6 @@
 # Calcu-de-Elisa-MGC
 
-# He desarrollado una calculadora con una amplia gama de funcionalidades para realizar operaciones matemáticas básicas y avanzadas, así como para manipular listas de números en formato CSV:
+### He desarrollado una calculadora con una amplia gama de funcionalidades para realizar operaciones matemáticas básicas y avanzadas, así como para manipular listas de números en formato CSV:
 - Operaciones Básicas: Suma, Resta, Multiplicación y División. Además, maneja adecuadamente errores como la división por cero, mostrando mensajes de advertencia cuando es necesario.
 - Operaciones Avanzadas: Cuadrado, Cubo, Potencia, Raíz Cuadrada(asegurándose de manejar adecuadamente los números negativos), Logaritmos Decimal y Natural (con verificaciones para números no válidos). Módulo y Factorial (con restricciones para los números negativos en el caso del factorial).
 - Operaciones con Listas CSV: Sumatorio, Media, Ordenar y Revertir, Eliminar Elemento (Además de validar la existencia de elementos en el CSV y que sean válidos).
