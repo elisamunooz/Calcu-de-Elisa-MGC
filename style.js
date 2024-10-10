@@ -5,6 +5,10 @@
 h1 {
     font-family: 'Merriweather', serif;
 }
+body {
+    background-color: #f4ccaa;
+    font-family: Arial, sans-serif;
+}
 
 /* Añadir una foto de fondo para la calculadora */
 body {
@@ -12,12 +16,6 @@ body {
     background-size: cover; /* Hace que la imagen cubra toda la pantalla */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
-}
-
-/* Estilo general */
-body {
-    background-color: #f4ccaa;
-    font-family: Arial, sans-serif;
 }
 
 /* Estilo para el contenedor principal */
