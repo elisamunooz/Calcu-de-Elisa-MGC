@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Elisa-Web</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Enlace a la fuente Merriweather -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="text-center">Calculadora de Elisa</h1>
+                <!-- Campo de entrada para los números -->
+                <input type="text" id="input" class="form-control mb-3 text-right" placeholder="0">
+                
+                <!-- Campo de entrada para la potencia -->
+                <input type="text" id="input-potencia" class="form-control mb-3 text-right" placeholder="Ingrese potencia" />
+                
+                <!-- Campo informativo -->
+                <h2 id="info" class="grande text-center" title="Info sobre el número">Info sobre el número</h2>
+                
+                <!-- Botones de números -->
+                <div class="row">
+                    <div class="col-3"><button class="btn btn-secondary btn-block" onclick="insertar('7')">7</button></div>
+                    <div class="col-3"><button class="btn btn-secondary btn-block" onclick="insertar('8')">8</button></div>
+                    <div class="col-3"><button class="btn btn-secondary btn-block" onclick="insertar('9')">9</button></div>
+                    <div class="col-3"><button class="btn btn-primary btn-block" onclick="almacenarOperacion('/')">/</button></div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-3"><button class="btn btn-secondary btn-block" onclick="insertar('4')">4</button></div>
+                    <div class="col-3"><button class="btn btn-secondary btn-block" onclick="insertar('5')">5</button></div>
+                    <div class="col-3"><button class="btn btn-secondary btn-block" onclick="insertar('6')">6</button></div>
+                    <div class="col-3"><button class="btn btn-primary btn-block" onclick="almacenarOperacion('*')">*</button></div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-3"><button class="btn btn-secondary btn-block" onclick="insertar('1')">1</button></div>
+                    <div class="col-3"><button class="btn btn-secondary btn-block" onclick="insertar('2')">2</button></div>
+                    <div class="col-3"><button class="btn btn-secondary btn-block" onclick="insertar('3')">3</button></div>
+                    <div class="col-3"><button class="btn btn-primary btn-block" onclick="almacenarOperacion('-')">-</button></div>
+                </div>
+
+                <!-- Fila con +,Logaritmo y Ln -->
+                <div class="row mt-2">
+                    <div class="col-3"><button class="btn btn-secondary btn-block" onclick="insertar('0')">0</button></div>
+                    <div class="col-3"><button class="btn btn-info btn-block" onclick="logaritmo()">Logaritmo</button></div>
+                    <div class="col-3"><button class="btn btn-info btn-block" onclick="logaritmoNeperiano()">Ln</button></div>
+                    <div class="col-3"><button class="btn btn-primary btn-block" onclick="almacenarOperacion('+')">+</button></div>
+                </div>
+                <!-- Fila con = -->
+                <div class="row mt-2">    
+                <div class="col-3"><button class="btn btn-primary btn-block" onclick="calcularResultado()">=</button></div>
+                </div>
+                <!-- Botones de operaciones avanzadas -->
+                <div class="row mt-4">
+                    <div class="col-4"><button class="btn btn-info btn-block" onclick="cuadrado()">Cuadrado</button></div>
+                    <div class="col-4"><button class="btn btn-info btn-block" id="modulo" onclick="mod()">Módulo</button></div>
+                    <div class="col-4"><button class="btn btn-info btn-block" id="factorial" onclick="fact()">Factorial</button></div>
+                </div>
+                
+                <!-- Nuevas Operaciones -->
+                <div class="row mt-4">
+                    <div class="col-4"><button class="btn btn-info btn-block" onclick="raizCuadrada()">Raíz Cuadrada</button></div>
+                    <div class="col-4"><button class="btn btn-info btn-block" onclick="elevarCubo()">Al Cubo</button></div>
+                    <div class="col-4"><button class="btn btn-info btn-block" onclick="elevarPotencia()">Elevar a Potencia</button></div>
+                </div>
+                
+                <!-- Operaciones con CSV -->
+                <div class="row mt-4">
+                    <div class="col-3"><button class="btn btn-warning btn-block" onclick="calcularMediaCSV()">Calcular Media CSV</button></div>
+                    <div class="col-3"><button class="btn btn-warning btn-block" onclick="sumatorio()">Sumatorio CSV</button></div>
+                    <div class="col-3"><button class="btn btn-warning btn-block" onclick="ordenarCSV()">Ordenar CSV</button></div>
+                    <div class="col-3"><button class="btn btn-warning btn-block" onclick="revertirCSV()">Revertir CSV</button></div>
+                    <div class="col-3 mt-3"><button class="btn btn-warning btn-block" onclick="quitarElementoCSV()">Quitar Elemento CSV</button></div>
+                    <div class="col-3 mt-3"><button class="btn btn-warning btn-block btn-csv" onclick="insertarComaCSV()">, para introducir CSV</button></div>
+                </div>               
+                
+                <!-- Botones de Clear y Descargar Logs de Errores en la misma línea -->
+                <div class="row mt-4">
+                    <div class="col-4 offset-2">
+                        <button class="btn btn-danger btn-block" onclick="limpiar()">Clear</button>
+                    </div>
+                    <div class="col-4">
+                        <button class="btn btn-secondary btn-block" onclick="descargarLogsErrores()">Descargar Logs de Errores</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div id="error" class="text-danger mt-3 text-center"></div>
+    </div>
+    
+    <!-- Enlace a Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script de funcionalidades -->
+    <script src="script.js"></script>
+</body>
+</html>
